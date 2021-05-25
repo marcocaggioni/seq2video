@@ -68,7 +68,10 @@ def main(exp_folder, xml_mask=None):
             AOI_from_XML=xmltodict.parse(file.read())
         AOI_dict={}
         for AOI in AOI_from_XML['annotation']['object']:
-            AOI_dict[AOI['name']]=AOI['bndbox']
+            try:
+              AOI_dict[AOI['name']]=AOI['bndbox']
+            except:
+              AOI_dict['name']=AOI_from_XML['annotation']['object']['bndbox']
         
         for AOI_name, AOI in AOI_dict.items():
             clips=make_clips(filelist,timelist,AOI=AOI)
