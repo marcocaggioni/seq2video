@@ -54,7 +54,7 @@ def main(exp_folder, xml_mask=None):
     
     p = Path(exp_folder).glob('**/*')
           
-    filelist = [item for item in p if item.is_file() and item.suffix in ['.jpg','.bmp','.BMP']]
+    filelist = [item for item in p if item.is_file() and item.suffix in ['.jpg','.bmp','.BMP','.JPG']]
     timelist = [datetime.datetime.fromtimestamp(file.stat().st_mtime) for file in filelist]
     timelist = list(map(lambda x: x-timelist[0],timelist))
 
