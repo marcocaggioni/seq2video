@@ -61,7 +61,7 @@ def main(exp_folder, xml_mask=None):
     if xml_mask is None:
         clips=make_clips(filelist,timelist)
         concat_clip = concatenate_videoclips(clips, method='compose')
-        concat_clip.write_videofile(f"{exp_folder.name}.mp4", fps=24)
+        concat_clip.write_videofile(f"seq2video.mp4", fps=24)
 
     else:
         with open(xml_mask, 'r') as file:
