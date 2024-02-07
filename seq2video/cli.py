@@ -76,7 +76,7 @@ def main(exp_folder, xml_mask=None):
         for AOI_name, AOI in AOI_dict.items():
             clips=make_clips(filelist,timelist,AOI=AOI)
             concat_clip = concatenate_videoclips(clips, method='compose')
-            concat_clip.write_videofile(f"{AOI_name}_{exp_folder.name}.mp4", fps=24)
+            concat_clip.write_videofile(f"seq2video.mp4", fps=24)
 
 if __name__ == '__main__':
     sys.exit(main())
